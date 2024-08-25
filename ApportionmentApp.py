@@ -11,7 +11,7 @@ def openFileDialog():
         processFile(filePath)
 
 def calculateSeatsOfRepresentatives(fileContents):
-    seatsRemaining = 384
+    seatsRemaining = 435
 
     statesList = []
     output = ""
@@ -19,6 +19,7 @@ def calculateSeatsOfRepresentatives(fileContents):
     for line in fileContents:
         state = StateData(line.get("state"), line.get("population"))
         statesList.append(state)
+        seatsRemaining = seatsRemaining - 1
 
     while True:
         getHighestPriority(statesList)
